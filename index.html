@@ -3,105 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabarak Engineering & Construction</title>
+    <title>شركة تبارك للهندسة والمقاولات</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333}
-        header{background-color:#1e3a5f;color:white;padding:15px 0;position:sticky;top:0;z-index:100}
-        .container{max-width:1200px;margin:0 auto;padding:0 20px}
-        nav{display:flex;justify-content:space-between;align-items:center}
-        nav a{color:white;text-decoration:none;padding:10px 15px;transition:color 0.3s}
-        nav a:hover{color:#2ecc71}
-        .logo{font-size:24px;font-weight:bold;color:#2ecc71}
-        .hero{background:linear-gradient(135deg,#1e3a5f 0%,#2c5aa0 100%);color:white;padding:80px 0;text-align:center}
-        .hero h1{font-size:48px;margin-bottom:20px}
-        .hero p{font-size:18px;margin-bottom:30px}
-        .btn{display:inline-block;background-color:#2ecc71;color:white;padding:12px 30px;text-decoration:none;border-radius:5px;transition:background-color 0.3s}
-        .btn:hover{background-color:#27ae60}
-        .section{padding:60px 0}
-        .section h2{text-align:center;font-size:36px;margin-bottom:40px;color:#1e3a5f}
-        .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px}
-        .service-card{background:#f9f9f9;padding:30px;border-radius:8px;border-left:4px solid:#2ecc71;text-align:center;transition:transform 0.3s}
-        .service-card:hover{transform:translateY(-10px)}
-        .service-card h3{color:#1e3a5f;margin-bottom:15px}
-        footer{background-color:#1e3a5f;color:white;padding:40px 0 20px;text-align:center}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5cb85c;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #5cb85c;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #5cb85c;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        .about {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1e3a5f;
+        }
+
+        .services {
+            padding: 60px 0;
+        }
+
+        .services h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1e3a5f;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1e3a5f;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .projects {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .projects h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1e3a5f;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 20px;
+        }
+
+        .project-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #5cb85c 0%, #4cae4c 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-info div {
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo">Tabarak</div>
-            <div>
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+        <div class="container">
+            <div class="logo">تبارك</div>
+            <nav>
+                <a href="#home">الرئيسية</a>
+                <a href="#services">الخدمات</a>
+                <a href="#projects">المشروعات</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
-            <h1>Tabarak Engineering & Construction</h1>
-            <p>Building the Infrastructure of Tomorrow</p>
-            <a href="#services" class="btn">Explore Services</a>
+            <h1>شركة تبارك للهندسة والمقاولات</h1>
+            <p>بناء البنية التحتية للغد</p>
+            <a href="#contact" class="btn">تواصل معنا</a>
         </div>
     </section>
 
-    <section class="section about" id="about">
+    <section class="about">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Tabarak is a leading engineering and construction company specializing in:</p>
-            <br>
-            <p><strong>Email:</strong> info@tabarak-co.com | <strong>Phone:</strong> 01000045534</p>
+            <h2>عن الشركة</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                شركة تبارك للهندسة والمقاولات هي شركة رائدة في مجال المشاريع الإنشائية والبنية التحتية. 
+                لدينا خبرة واسعة في تنفيذ المشاريع الكبرى في مصر، من الأعمال الإنشائية إلى البنية التحتية والصيانة والتشغيل.
+            </p>
         </div>
     </section>
 
-    <section class="section" id="services">
+    <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="services">
+            <h2>خدماتنا</h2>
+            <div class="service-grid">
                 <div class="service-card">
-                    <h3>Drinking Water Networks</h3>
-                    <p>Professional design and installation of drinking water networks and tanks</p>
+                    <h3>الأعمال الإنشائية</h3>
+                    <p>مشروعات سكنية وصناعية وتجارية وسياحية بأعلى معايير الجودة والسلامة</p>
                 </div>
                 <div class="service-card">
-                    <h3>Sewage Treatment</h3>
-                    <p>Sewage lifting and treatment stations with modern technology</p>
+                    <h3>البنية التحتية</h3>
+                    <p>شبكات مياه الشرب والخزانات، محطات الرفع والمعالجة للصرف الصحي</p>
                 </div>
                 <div class="service-card">
-                    <h3>Infrastructure Projects</h3>
-                    <p>Complete infrastructure solutions for residential, commercial and industrial projects</p>
+                    <h3>الصيانة والتشغيل</h3>
+                    <p>الاستشارة بالعقود، تصميمات مفصلة، رسومات هندسية، إدارة المشاريع</p>
                 </div>
                 <div class="service-card">
-                    <h3>Electromechanical Works</h3>
-                    <p>Professional electrical and mechanical installation services</p>
-                </div>
-                <div class="service-card">
-                    <h3>Construction Services</h3>
-                    <p>Residential, commercial, industrial and tourism project construction</p>
-                </div>
-                <div class="service-card">
-                    <h3>Maintenance & Operation</h3>
-                    <p>Professional maintenance and operation services for all installations</p>
+                    <h3>الأعمال الكهرومكانيكية</h3>
+                    <p>تنفيذ أعمال كهرومكانيكية متقدمة بأحدث التقنيات</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background-color:#f0f0f0" id="projects">
+    <section id="projects" class="projects">
         <div class="container">
-            <h2>Key Projects</h2>
-            <p style="text-align:center;margin-top:30px">Portfolio includes major infrastructure and construction projects across Egypt</p>
-            <p style="text-align:center;margin-top:20px">Including: Al Mahmoudia Development Project, New Administrative Capital, New Giza, and more</p>
+            <h2>أهم المشروعات</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #1e3a5f, #2c5aa0); height: 200px;"></div>
+                    <div class="content">
+                        <h3>مشروع محور المحمودية</h3>
+                        <p>مشروع تطوير محور المحمودية بالإسكندرية</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #5cb85c, #4cae4c); height: 200px;"></div>
+                    <div class="content">
+                        <h3>العاصمة الإدارية الجديدة</h3>
+                        <p>مشروع العاصمة الإدارية الجديدة</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #f0ad4e, #ec971f); height: 200px;"></div>
+                    <div class="content">
+                        <h3>مشروع نيو جيزة</h3>
+                        <p>مشروع نيو جيزة السكني</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #5bc0de, #46b8da); height: 200px;"></div>
+                    <div class="content">
+                        <h3>مشروع أليكس ويست</h3>
+                        <p>مشروع إنشاء 2 عمارة في أليكس ويست</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>اتصل بنا</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>الهاتف</h3>
+                    <p>01000045534</p>
+                </div>
+                <div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>info@tabarak-co.com</p>
+                </div>
+                <div>
+                    <h3>آخر التحديثات</h3>
+                    <p>تابعنا على وسائل التواصل الاجتماعي</p>
+                </div>
+            </div>
+            <a href="mailto:info@tabarak-co.com" class="btn">أرسل لنا رسالة</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <h3>Tabarak Engineering & Construction</h3>
-            <p>Contact: info@tabarak-co.com | Phone: 01000045534</p>
-            <p>&copy; 2025 Tabarak. All rights reserved.</p>
+            <p>&copy; 2024 شركة تبارك للهندسة والمقاولات. جميع الحقوق محفوظة.</p>
+            <p>Building the Infrastructure of Tomorrow</p>
         </div>
     </footer>
 </body>
